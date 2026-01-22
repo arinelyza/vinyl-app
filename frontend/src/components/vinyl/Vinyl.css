@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#album {
+  position: relative;
+  width: min(60vw, 450px);
+  height: min(60vw, 450px);
+}
+
+#vinyl {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  background-image: url("../../assets/vinyl.png");
+  background-size: 106% 106%;
+  background-position: center;
+  z-index: 1;
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.5);
+}
+
+#vinyl::before {
+  content: "";
+  position: absolute;
+  inset: 5%;
+  border-radius: 50%;
+  background-size: cover;
+  mix-blend-mode: screen;
+  opacity: 0.25;
+}
+
+#print {
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background-image: url("https://i.etsystatic.com/11095448/r/il/64cba1/3340506078/il_570xN.3340506078_69b8.jpg");
+  background-size: cover;
+  box-shadow: inset 0 0 0 4px rgba(150, 150, 150, 0.4);
+}
+
+@keyframes spinThat {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Play / Pause kontrolü --- */
+.spinning #vinyl {
+  --spin-speed: 6s;
+}
+
+.paused #vinyl {
+  --spin-speed: 120s;
+}

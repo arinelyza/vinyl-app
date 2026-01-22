@@ -1,0 +1,13 @@
+build/bin
+node_modules
+frontend/dist
+frontend/package-lock.json
+frontend/package.json.md5
+
+# ffprobe binary
+internal/ffprobe/windows
+internal/ffprobe/darwin
+
+# Database files
+*.db
+Library/
